@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+    background-color: #0b1329;
+    color: #f1f5f9;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Animated fiery ambient mesh background */
+.animated-bg {
+  background: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.22) 0%, transparent 50%),
+              radial-gradient(circle at 80% 10%, rgba(239, 68, 68, 0.2) 0%, transparent 45%),
+              radial-gradient(circle at 50% 80%, rgba(20, 184, 166, 0.18) 0%, transparent 50%),
+              radial-gradient(circle at 90% 85%, rgba(245, 158, 11, 0.15) 0%, transparent 40%),
+              linear-gradient(135deg, #090e1a 0%, #0d1b2a 40%, #111827 100%);
+  background-size: 140% 140%;
+  animation: bgPulse 16s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Fire gradient text */
+.fire-gradient-text {
+  background: linear-gradient(135deg, #ff4500 0%, #ff7700 50%, #ffcc00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-dropzone {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px dashed rgba(249, 115, 22, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-dropzone:hover, .glass-dropzone.drag-active {
+  border-color: #f97316;
+  background: rgba(249, 115, 22, 0.08);
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.25);
+}
+
+/* Card 1: Pros - Green tinted glass */
+.glass-card-pros {
+  background: linear-gradient(145deg, rgba(6, 78, 59, 0.35) 0%, rgba(15, 23, 42, 0.75) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.15);
+}
+
+.glass-card-pros:hover {
+  border-color: rgba(52, 211, 153, 0.5);
+  box-shadow: 0 15px 35px -5px rgba(16, 185, 129, 0.25);
+}
+
+/* Card 2: Cons - Yellow/Orange tinted glass */
+.glass-card-cons {
+  background: linear-gradient(145deg, rgba(120, 53, 15, 0.35) 0%, rgba(15, 23, 42, 0.75) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: 0 10px 30px -5px rgba(245, 158, 11, 0.15);
+}
+
+.glass-card-cons:hover {
+  border-color: rgba(251, 191, 36, 0.5);
+  box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.25);
+}
+
+/* Card 3: The Roast - Red/Pink/Fiery tinted glass */
+.glass-card-roast {
+  background: linear-gradient(145deg, rgba(153, 27, 27, 0.45) 0%, rgba(15, 23, 42, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(248, 113, 113, 0.45);
+  box-shadow: 0 12px 40px -5px rgba(239, 68, 68, 0.3);
+}
+
+.glass-card-roast:hover {
+  border-color: rgba(248, 113, 113, 0.7);
+  box-shadow: 0 20px 45px -5px rgba(239, 68, 68, 0.45);
+}
+
+/* Glowing buttons */
+.glow-button-flame {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.5);
+  transition: all 0.25s ease;
+}
+
+.glow-button-flame:hover {
+  box-shadow: 0 6px 28px rgba(249, 115, 22, 0.75);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.glow-button-flame:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Flame wiggle animation */
+@keyframes flameWiggle {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  50% { transform: rotate(4deg) scale(1.1); }
+}
+
+.animate-flame {
+  display: inline-block;
+  animation: flameWiggle 1.5s ease-in-out infinite;
+}
+
+/* Pulse glow for loading */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
